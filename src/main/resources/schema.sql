@@ -1,0 +1,39 @@
+-- create table team(
+--                        id IDENTITY not null,
+--                        team_name varchar(255) NOT NULL,
+--                        PRIMARY KEY (id)
+-- );
+--
+-- create table team_members(
+--     id bigint NOT NULL AUTO_INCREMENT,
+--     team_member_name varchar(255) NOT NULL,
+--     team_id bigint,
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (team_id) REFERENCES team(id)
+-- );
+--
+-- ALTER TABLE team_members
+-- ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+-- ADD COLUMN updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+-- create table instances(
+--     id bigint NOT NULL AUTO_INCREMENT,
+--     instance_name varchar(255) NOT NULL,
+--     team_id bigint,
+--     memory bigint,
+--     cpu bigint,
+--     in_use boolean,
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (team_id) REFERENCES team(id)
+-- );
+
+-- create table instances_history(
+--                           id bigint NOT NULL AUTO_INCREMENT,
+--                           instance_id varchar(255) NOT NULL,
+--                           team_member_id bigint,
+--                           team_id bigint,
+--                           PRIMARY KEY (id),
+--                           FOREIGN KEY (team_id) REFERENCES team(id),
+--                           FOREIGN KEY (team_member_id) REFERENCES team_member(id),
+--                           FOREIGN KEY (instance_id) REFERENCES instances(id)
+-- );
